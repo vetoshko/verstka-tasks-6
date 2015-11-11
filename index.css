@@ -1,1 +1,113 @@
+main
+{
 
+    width: 100%;
+}
+
+div
+{
+    text-align: center;
+    width: 20%;
+    height: 300px;
+    background-color: red;
+    display: inline-block;
+    margin: 2%;
+}
+
+div img
+{
+    height: 80%;
+}
+
+/*.first-window:hover,
+.second-window:hover,
+.third-window:hover,
+.fourth-window:hover
+{
+    box-shadow: 3px 3px 3px black;
+}*/
+
+/*footer
+{
+    position: relative;
+    bottom: 0;
+    height: 200px;
+    background: url(http://muz51.biz/wp-content/themes/poetry/img/footer2.png);
+    background-size: cover;
+}*/
+.hidden-text
+{
+    display: none;
+    padding: 30px;
+}
+input[value="one"]:checked ~ div:not(.first-window),
+input[value="two"]:checked ~ div:not(.second-window),
+input[value="three"]:checked ~ div:not(.third-window),
+input[value="four"]:checked ~ div:not(.fourth-window)
+{
+    display: none;
+}
+
+div.first:hover,
+div.second:hover,
+div.third:hover,
+div.fourth:hover
+{
+    box-shadow: 1px 0px 0px black;
+    /*position: absolute;*/
+    z-index: 10;
+    /*width: 25%;*/
+}
+
+/*div.first:hover > div.second,
+div.second:hover > div.third,
+div.third:hover > div.fourth,
+{
+    position: fixed;
+}*/
+
+div.first:hover > div.hidden-text.first,
+div.second:hover > div.hidden-text.second,
+div.third:hover > div.hidden-text.third,
+div.fourth:hover > div.hidden-text.fourth
+{
+    padding: 20px;
+    width: 100%;
+    display: table-row;
+}
+
+.bg
+{
+    margin: 0;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #8A8391;
+    opacity: 0.7;
+    z-index: 15;
+}
+
+.hidden-image
+{
+    width: 50%;
+    height: auto;
+    display: none;
+    z-index: 30;
+    position: absolute;
+    margin: 0 23%;
+}
+
+a:focus ~ .bg,
+a:focus ~ .hidden-image
+{
+    display: block;
+}
+
+a:focus
+{
+    position: absolute;
+    z-index: 30px;
+}
