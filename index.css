@@ -14,18 +14,26 @@ div
     margin: 2%;
 }
 
-div img
+div a img
 {
     height: 37%;
 }
 
-/*.first-window:hover,
+
+label
+{
+    background: url(img/checkbox.png);
+    height: 64px;
+    width: 64px;
+}
+
+.first-window:hover,
 .second-window:hover,
 .third-window:hover,
 .fourth-window:hover
 {
     box-shadow: 3px 3px 3px black;
-}*/
+}
 
 /*footer
 {
@@ -49,16 +57,16 @@ input[value="four"]:checked ~ div:not(.fourth-window)
     display: none;
 }
 
-div.first:hover,
+/*div.first:hover,
 div.second:hover,
 div.third:hover,
 div.fourth:hover
 {
     box-shadow: 0px 0px 10px black;
-    /*position: absolute;*/
+    position: absolute;
     z-index: 10;
-    /*width: 25%;*/
-}
+    width: 25%;
+}*/
 
 /*div.first:hover > div.second,
 div.second:hover > div.third,
@@ -93,22 +101,19 @@ div.fourth:hover > div.hidden-text.fourth
 
 .hidden-image
 {
-    width: 50%;
-    height: auto;
-    display: none;
-    z-index: 30;
     position: absolute;
-    margin: 0 23%;
+    display: none;
+    margin:auto;
+    left: 0;
+    right: 0;
+    top: 150px;
+    z-index: 30;
+    width: 50%;
+    /*height: 50%;*/
 }
 
 a:focus ~ .bg,
 a:focus ~ .hidden-image
 {
     display: block;
-}
-
-a:focus
-{
-    position: absolute;
-    z-index: 30px;
 }
