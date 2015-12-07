@@ -1,22 +1,41 @@
+html,
+body
+{
+    width: 99%;
+    height: 99%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 main
 {
-
+    position: relative;
     width: 100%;
+}
+
+h1
+{
+    text-align: center;
+    font-size: 2em;
+    font-family: Verdana, sans-serif;
 }
 
 div
 {
     text-align: center;
     width: 20%;
-    height: 600px;
-    /*background-color: red;*/
+    height: auto;
     display: inline-block;
     margin: 2%;
+    vertical-align: top;
 }
 
 div a img
 {
-    height: 37%;
+    position: relative;
+    top: 0;
+    width: 80%;
 }
 
 
@@ -27,28 +46,50 @@ label
     width: 64px;
 }
 
-.first-window:hover,
-.second-window:hover,
-.third-window:hover,
-.fourth-window:hover
+footer
 {
-    box-shadow: 3px 3px 3px black;
-}
-
-/*footer
-{
-    position: relative;
-    bottom: 0;
+    position: fixed;
+    width: 100%;
     height: 200px;
+    bottom: 0;
     background: url(http://muz51.biz/wp-content/themes/poetry/img/footer2.png);
     background-size: cover;
-}*/
+}
+
 .hidden-text
 {
     height: auto;
     display: none;
     padding: 30px;
 }
+
+input[type="radio"]
+{
+    margin-left: 5px;
+    position: fixed;
+    bottom: 300px;
+}
+
+#one
+{
+    left: 47%;
+}
+
+#two
+{
+    left: 49%;
+}
+
+#three
+{
+    left: 51%;
+}
+
+#four
+{
+    left: 53%;
+}
+
 input[value="one"]:checked ~ div:not(.first-window),
 input[value="two"]:checked ~ div:not(.second-window),
 input[value="three"]:checked ~ div:not(.third-window),
@@ -57,28 +98,35 @@ input[value="four"]:checked ~ div:not(.fourth-window)
     display: none;
 }
 
-/*div.first:hover,
-div.second:hover,
-div.third:hover,
-div.fourth:hover
+.first-card:hover,
+.second-card:hover,
+.third-card:hover,
+.fourth-card:hover
 {
-    box-shadow: 0px 0px 10px black;
     position: absolute;
-    z-index: 10;
-    width: 25%;
-}*/
+    box-shadow: 0px 0px 10px black;
+    z-index: 20;
+    width: 23%;
+}
 
-/*div.first:hover > div.second,
-div.second:hover > div.third,
-div.third:hover > div.fourth,
+
+.hidden-block
 {
-    position: fixed;
-}*/
+    display: none;
+}
 
-div.first:hover > div.hidden-text.first,
-div.second:hover > div.hidden-text.second,
-div.third:hover > div.hidden-text.third,
-div.fourth:hover > div.hidden-text.fourth
+.first-card:hover + .hidden-block,
+.second-card:hover + .hidden-block,
+.third-card:hover + .hidden-block,
+.fourth-card:hover + .hidden-block
+{
+    display: inline-block;
+}
+
+.first-card:hover > .hidden-text.first,
+.second-card:hover > .hidden-text.second,
+.third-card:hover > .hidden-text.third,
+.fourth-card:hover > .hidden-text.fourth
 {
     padding: 20px;
     width: 100%;
@@ -89,19 +137,29 @@ div.fourth:hover > div.hidden-text.fourth
 {
     margin: 0;
     display: none;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: #8A8391;
-    opacity: 0.7;
+    opacity: 0.5;
     z-index: 15;
 }
 
+.close
+{
+    width: auto;
+    height: auto;
+    display: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+}
 .hidden-image
 {
-    position: absolute;
+    position: fixed;
     display: none;
     margin:auto;
     left: 0;
@@ -109,11 +167,11 @@ div.fourth:hover > div.hidden-text.fourth
     top: 150px;
     z-index: 30;
     width: 50%;
-    /*height: 50%;*/
 }
 
-a:focus ~ .bg,
-a:focus ~ .hidden-image
+.bg:target,
+.bg:target + .hidden-image,
+.bg:target ~ a .close
 {
     display: block;
 }
